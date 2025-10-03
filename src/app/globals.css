@@ -120,3 +120,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+:root { --nav-h: 64px; }          /* adjust as needed (desktop/tablet) */
+@media (min-width: 1024px) {
+  :root { --nav-h: 72px; }
+}
+
+html { scroll-behavior: smooth; }
