@@ -1,5 +1,5 @@
 import "server-only";
-import { pageSchema } from "@/lib/content/schema";
+import { PageSchema } from "@/lib/content/schema";
 import { homePage } from "./data/home";
 import type { PageDocument } from "@/types/blocks";
 
@@ -9,6 +9,6 @@ export async function getPageBySlug(slug: string): Promise<PageDocument> {
   if (!doc) throw new Error("Page not found");
 
   // Validate before returning
-  const parsed = pageSchema.parse(doc);
+  const parsed = PageSchema.parse(doc);
   return parsed;
 }

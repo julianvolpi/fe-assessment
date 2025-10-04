@@ -1,41 +1,65 @@
 "use client";
 
-import { Block } from "@/types/blocks";
-import { Hero } from "./sections/hero";
-import { JSX } from "react";
+import React, { JSX } from "react";
 import { usePage } from "@/lib/hooks/usePage";
+import type { Block } from "@/types/blocks";
+import Hero from "./sections/hero";
 
-// TODO: solve scrolling offset issue
-
-type BlockComponents = {
-  [K in Block as K["type"]]: (props: K) => JSX.Element
+// Optional: simple skeletons/placeholders
+function LoadingPage() {
+  return (
+    <main className="container mx-auto py-24">
+      <div className="h-8 w-48 rounded bg-muted mb-6" />
+      <div className="h-5 w-3/5 rounded bg-muted mb-3" />
+      <div className="h-5 w-2/5 rounded bg-muted" />
+    </main>
+  );
 }
 
-export const blockComponents: BlockComponents = {
-  hero: Hero,
+function ErrorPage({ message = "Failed to load content." }: { message?: string }) {
+  return (
+    <main className="container mx-auto py-24">
+      <p className="text-destructive">{message}</p>
+    </main>
+  );
+}
+
+/**
+ * Renders a single block based on its discriminated `type`.
+ * This switch is exhaustive: adding a new block type will cause
+ * a TypeScript error here until you handle it.
+ */
+function RenderBlock(block: Block): JSX.Element {
+  switch (block.type) {
+    case "hero": {
+      // Ensure the section has a stable anchor id for navbar links
+      const id = block.id ?? "hero";
+      return (
+        <Hero {...block} />
+      );
+    }
+
+    // case "featureGrid":
+    //   return <FeatureGrid {...block} />;
+
+    // case "faq":
+    //   return <FAQ {...block} />;
+  }
 }
 
 export default function PageRenderer({ slug }: { slug: string }) {
   const { data, isLoading, error } = usePage(slug);
 
-  if (isLoading) return <div className="container mx-auto py-24">Loading…</div>;
-  if (error || !data) return <div className="container mx-auto py-24">Failed to load.</div>;
+  if (isLoading) return <LoadingPage />;
+  if (error || !data) return <ErrorPage />;
 
   return (
     <main>
-      {data.blocks.map((block, i) => {
-        const BlockComponent = blockComponents[block.type]; 
-        return (
-          <section
-            key={i}
-            id={block.type}
-            className="container mx-auto scroll-mt-nav py-24"
-          >
-            <BlockComponent {...block} />
-          </section>
-        )
-      })}
-
+      {data.blocks.map((block, idx) => (
+        <React.Fragment key={block.id ?? `${block.type}-${idx}`}>
+          {RenderBlock(block)}
+        </React.Fragment>
+      ))}
     </main>
   );
 }

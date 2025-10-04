@@ -1,7 +1,17 @@
-export type HeroBlock = {
-  type: "hero";
-  heading: string;
+import { z } from "zod";
+import { HeroBlockSchema } from "../lib/content/schema";
+
+export type NavItem = {
+  label: string;
+  href: string;
 };
+
+export type Cta = {
+  label: string;
+  href: string;
+};
+
+export type HeroBlock = z.infer<typeof HeroBlockSchema>;
 
 export type Block = HeroBlock;
 

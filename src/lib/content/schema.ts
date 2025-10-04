@@ -1,13 +1,35 @@
 import { z } from "zod";
 
-export const hero = z.object({
-  type: z.literal("hero"),
-  heading: z.string(),
+export const BaseBlockSchema = z.object({
+  type: z.string(),
+  id: z.string().optional(), // used for anchors (#id)
+  navLabel: z.string().optional(), // if you ever auto-build the navbar
 });
 
-export const block = z.discriminatedUnion("type", [hero]);
+export const NavItemSchema = z.object({
+  label: z.string().min(1),
+  href: z.string().min(1),
+});
 
-export const pageSchema = z.object({
+export const CtaSchema = z.object({
+  label: z.string().min(1),
+  href: z.string().min(1),
+});
+
+export const HeroBlockSchema = BaseBlockSchema.extend({
+  type: z.literal("hero"),
+  logoSrc: z.string().min(1).optional(),
+  nav: z.array(NavItemSchema).min(1).optional(),
+  cta: CtaSchema.optional(),
+  heading: z.string().min(1),
+  subheading: z.string().min(1).optional(),
+  mediaSrc: z.string().min(1).optional(),
+  className: z.string().optional(),
+});
+
+export type HeroBlock = z.infer<typeof HeroBlockSchema>;
+
+export const PageSchema = z.object({
   slug: z.string(),
   title: z.string(),
   seo: z
@@ -17,7 +39,12 @@ export const pageSchema = z.object({
       openGraphImage: z.string().optional(),
     })
     .optional(),
-  blocks: z.array(block),
+  blocks: z.array(
+    z.discriminatedUnion("type", [
+      HeroBlockSchema,
+      // TODO: add other block schemas here
+    ])
+  ),
 });
 
-export type PageDoc = z.infer<typeof pageSchema>;
+export type PageDocument = z.infer<typeof PageSchema>;
