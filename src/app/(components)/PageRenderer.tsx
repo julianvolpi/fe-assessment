@@ -3,9 +3,8 @@
 import React, { JSX } from "react";
 import { usePage } from "@/lib/hooks/usePage";
 import type { Block } from "@/types/blocks";
-import Hero from "./sections/hero";
+import HeroModule from "./sections/HeroModule";
 
-// Optional: simple skeletons/placeholders
 function LoadingPage() {
   return (
     <main className="container mx-auto py-24">
@@ -26,16 +25,12 @@ function ErrorPage({ message = "Failed to load content." }: { message?: string }
 
 /**
  * Renders a single block based on its discriminated `type`.
- * This switch is exhaustive: adding a new block type will cause
- * a TypeScript error here until you handle it.
  */
 function RenderBlock(block: Block): JSX.Element {
   switch (block.type) {
     case "hero": {
-      // Ensure the section has a stable anchor id for navbar links
-      const id = block.id ?? "hero";
       return (
-        <Hero {...block} />
+        <HeroModule {...block} />
       );
     }
 

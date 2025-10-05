@@ -2,13 +2,17 @@ import { z } from "zod";
 
 export const BaseBlockSchema = z.object({
   type: z.string(),
-  id: z.string().optional(), // used for anchors (#id)
-  navLabel: z.string().optional(), // if you ever auto-build the navbar
+  id: z.string(), // used for anchors (#id)
 });
 
 export const NavItemSchema = z.object({
   label: z.string().min(1),
   href: z.string().min(1),
+});
+
+export const CardSchema = z.object({
+  title: z.string().min(1),
+  description: z.string().min(1),
 });
 
 export const CtaSchema = z.object({
@@ -18,13 +22,14 @@ export const CtaSchema = z.object({
 
 export const HeroBlockSchema = BaseBlockSchema.extend({
   type: z.literal("hero"),
-  logoSrc: z.string().min(1).optional(),
-  nav: z.array(NavItemSchema).min(1).optional(),
-  cta: CtaSchema.optional(),
+  logoSrc: z.string().min(1),
+  navItems: z.array(NavItemSchema).min(1),
+  cta: CtaSchema,
   heading: z.string().min(1),
-  subheading: z.string().min(1).optional(),
-  mediaSrc: z.string().min(1).optional(),
+  subheading: z.string().min(1),
+  mediaSrc: z.string().min(1),
   className: z.string().optional(),
+  cards: z.array(CardSchema).min(1),
 });
 
 export type HeroBlock = z.infer<typeof HeroBlockSchema>;
