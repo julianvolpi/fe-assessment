@@ -45,5 +45,72 @@ export const homePage: PageDocument = {
         },
       ],
     },
+    {
+      id: "manifesto",
+      type: "manifesto",
+      paragraphs: [
+        "We've helped companies like Stripe, Monzo, and Talentful grow with expert legal advice embedded into their business. We've also helped single-founder companies to give them the benefits of an in-house team to accelerate their growth.",
+        "Our approach means we know your world inside out. You get fast, practical guidance without worrying that every question comes at a high cost. Legal support as a driver of growth, not a barrier.",
+        "And because we understand commercial realities, we help you capture opportunities and keep moving forward.",
+      ],
+    },
+    {
+      id: "client-scroller",
+      type: "client-scroller",
+      heading: "Experienced with forward thinking businesses",
+      subheading:
+        "We are trusted by a wide range of successful businesses, each with unique challenges and needs.",
+      storiesButtonText: "Watch our client stories",
+      clientLogos: [
+        {
+          src: "/Group.svg",
+          alt: "Client logo 1",
+          width: "w-[140px]",
+          height: "h-[33.36px]",
+        },
+        {
+          src: "/Group.svg",
+          alt: "Client logo 2",
+          width: "w-[140px]",
+          height: "h-[33.36px]",
+        },
+        {
+          src: "/Group.svg",
+          alt: "Client logo 3",
+          width: "w-[140px]",
+          height: "h-[33.36px]",
+        },
+        {
+          src: "/Group.svg",
+          alt: "Client logo 4",
+          width: "w-[140px]",
+          height: "h-[33.36px]",
+        },
+        {
+          src: "/Group.svg",
+          alt: "Client logo 5",
+          width: "w-[140px]",
+          height: "h-[33.36px]",
+        },
+        {
+          src: "/Group.svg",
+          alt: "Client logo 6",
+          width: "w-[140px]",
+          height: "h-[33.36px]",
+        },
+        {
+          src: "/Group.svg",
+          alt: "Client logo 7",
+          width: "w-[140px]",
+          height: "h-[33.36px]",
+        },
+        {
+          src: "/Group.svg",
+          alt: "Client logo 8",
+          width: "w-10",
+          height: "h-[33.36px]",
+        },
+      ],
+    },
   ],
 };

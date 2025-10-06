@@ -4,11 +4,22 @@ import { HeroBlock } from "@/types/blocks";
 import { Play, Menu, Plus } from "lucide-react";
 import React, { JSX } from "react";
 
-export default function HeroModule({heading, subheading, logoSrc, mediaSrc, cta, navItems, cards}: HeroBlock): JSX.Element {
+// TODO: solve logo not loading
+export default function HeroModule({
+  heading,
+  subheading,
+  logoSrc,
+  mediaSrc,
+  cta,
+  navItems,
+  cards,
+}: HeroBlock): JSX.Element {
+  const logoCn = `relative w-[128.56px] h-[19px] bg-[url(${logoSrc})] bg-[100%_100%]`;
+
   return (
     <div className="flex flex-col items-center gap-[var(--spacing-padding-medium)] pb-[var(--spacing-padding-flex-xlarge)] pt-0 px-0 bg-[#2a223f]">
       <header className="flex max-w-screen-2xl h-[73px] items-center justify-between pt-[var(--spacing-padding-xsmall)] pr-[var(--spacing-margins)] pb-[var(--spacing-padding-xsmall)] pl-[var(--spacing-margins)] w-full bg-transparent">
-        <div className={`relative w-[128.56px] h-[19px] bg-[url(${logoSrc})] bg-[100%_100%]`} />
+        <div className={logoCn} />
 
         <nav className="hidden lg:inline-flex items-center justify-end gap-[var(--spacing-padding-medium)] flex-[0_0_auto]">
           <div className="inline-flex flex-wrap items-center gap-[var(--spacing-padding-medium)] flex-[0_0_auto]">
@@ -56,10 +67,17 @@ export default function HeroModule({heading, subheading, logoSrc, mediaSrc, cta,
           </div>
 
           <div className="relative mx-auto w-full max-w-[786px] h-[638px] flex items-center justify-center overflow-visible">
-
             <div className="pointer-events-none absolute z-0 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[764px] h-[604px] max-w-none">
-              <svg className="block w-full h-full" viewBox="0 0 764 604" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M559.029 181.703H763.832L665.006 411.174H464.658L385.35 604H131.193L210.5 411.174H0.831787L99.9509 181.762L304.871 181.703L379.665 0H633.822L559.029 181.703Z" fill="#7160F0"/>
+              <svg
+                className="block w-full h-full"
+                viewBox="0 0 764 604"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M559.029 181.703H763.832L665.006 411.174H464.658L385.35 604H131.193L210.5 411.174H0.831787L99.9509 181.762L304.871 181.703L379.665 0H633.822L559.029 181.703Z"
+                  fill="#7160F0"
+                />
               </svg>
             </div>
 
@@ -70,8 +88,8 @@ export default function HeroModule({heading, subheading, logoSrc, mediaSrc, cta,
                 height="470"
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
-                title="Intro-short-Sm-v1.1">
-              </iframe>
+                title="Intro-short-Sm-v1.1"
+              ></iframe>
               <Button
                 variant="secondary"
                 className="absolute bottom-4 left-1/2 -translate-x-1/2 h-auto px-4 py-2 bg-white/90 hover:bg-white"

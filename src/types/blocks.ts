@@ -1,5 +1,9 @@
 import { z } from "zod";
-import { HeroBlockSchema } from "../lib/content/schema";
+import {
+  ClientScrollerSchema,
+  HeroBlockSchema,
+  ManifestoBlockSchema,
+} from "../lib/content/schema";
 
 export type NavItem = {
   label: string;
@@ -12,8 +16,10 @@ export type Cta = {
 };
 
 export type HeroBlock = z.infer<typeof HeroBlockSchema>;
+export type ManifestoBlock = z.infer<typeof ManifestoBlockSchema>;
+export type ClientScrollerBlock = z.infer<typeof ClientScrollerSchema>;
 
-export type Block = HeroBlock;
+export type Block = HeroBlock | ManifestoBlock | ClientScrollerBlock;
 
 export type PageDocument = {
   slug: string;

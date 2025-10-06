@@ -4,6 +4,8 @@ import React, { JSX } from "react";
 import { usePage } from "@/lib/hooks/usePage";
 import type { Block } from "@/types/blocks";
 import HeroModule from "./sections/HeroModule";
+import ManifestoModule from "./sections/ManifestoModule";
+import ClientScroller from "./sections/ClientScrollerModule";
 
 function LoadingPage() {
   return (
@@ -15,7 +17,11 @@ function LoadingPage() {
   );
 }
 
-function ErrorPage({ message = "Failed to load content." }: { message?: string }) {
+function ErrorPage({
+  message = "Failed to load content.",
+}: {
+  message?: string;
+}) {
   return (
     <main className="container mx-auto py-24">
       <p className="text-destructive">{message}</p>
@@ -28,17 +34,14 @@ function ErrorPage({ message = "Failed to load content." }: { message?: string }
  */
 function RenderBlock(block: Block): JSX.Element {
   switch (block.type) {
-    case "hero": {
-      return (
-        <HeroModule {...block} />
-      );
-    }
+    case "hero":
+      return <HeroModule {...block} />;
 
-    // case "featureGrid":
-    //   return <FeatureGrid {...block} />;
+    case "manifesto":
+      return <ManifestoModule {...block} />;
 
-    // case "faq":
-    //   return <FAQ {...block} />;
+    case "client-scroller":
+      return <ClientScroller {...block} />;
   }
 }
 

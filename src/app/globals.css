@@ -9,7 +9,10 @@
 
 :root {
   --base-brand-colour-secondary-90: rgba(42, 34, 63, 1);
+  --base-brand-colour-secondary-100: rgba(32, 26, 47, 1);
   --base-neutral-colour-oncolour-1: rgba(255, 255, 255, 1);
+  --base-neutral-colour-light-grey: rgba(217, 217, 217, 1);
+  --base-neutral-colour-stone-2: rgba(242, 239, 235, 1);
   --body-large-font-family: "Figtree", Helvetica;
   --body-large-font-size: 20px;
   --body-large-font-style: normal;
@@ -27,7 +30,7 @@
   --body-regular-font-style: normal;
   --body-regular-font-weight: 400;
   --body-regular-letter-spacing: 0px;
-  --body-regular-line-height: 139.9999976158142%;
+  --body-regular-line-height: 140%;
   --collection-1-white: rgba(255, 255, 255, 1);
   --colour-state-ondark-default: var(--base-neutral-colour-oncolour-1);
   --colour-state-onlight-default: var(--base-brand-colour-secondary-90);
@@ -38,15 +41,31 @@
   --display-extra-large-h1-letter-spacing: 0px;
   --display-extra-large-h1-line-height: normal;
   --display-large-h1-font-size: 36px;
+  --display-large-font-size: 34px;
+  --display-medium-font-family: "Tiempos Headline", Helvetica;
+  --display-medium-font-size: 30px;
+  --display-medium-font-style: normal;
+  --display-medium-font-weight: 300;
+  --display-medium-letter-spacing: 0px;
+  --display-medium-line-height: 140%;
+  --display-small-font-size: 22px;
   --heading-large-font-family: "Figtree", Helvetica;
   --heading-large-font-size: 26px;
   --heading-large-font-style: normal;
   --heading-large-font-weight: 600;
   --heading-large-letter-spacing: 0px;
   --heading-large-line-height: normal;
+  --heading-large-line-height: normal;
+  --heading-medium-font-family: "Figtree", Helvetica;
+  --heading-medium-font-size: 22px;
+  --heading-medium-font-style: normal;
+  --heading-medium-font-weight: 600;
+  --heading-medium-letter-spacing: 0px;
+  --heading-medium-line-height: normal;
   --interactionsondarktext-link-default: rgba(255, 255, 255, 1);
   --spacing-margins: 36px;
   --spacing-padding-flex-xlarge: 160px;
+  --spacing-padding-flex-large: 76px;
   --spacing-padding-flex-xsmall: 36px;
   --spacing-padding-medium: 36px;
   --spacing-padding-small: 24px;

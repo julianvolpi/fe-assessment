@@ -9,12 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        "base-brand-colour-secondary-100":
+          "var(--base-brand-colour-secondary-100)",
         "collection-1-white": "var(--collection-1-white)",
         "colour-state-ondark-default": "var(--colour-state-ondark-default)",
         "colour-state-onlight-default": "var(--colour-state-onlight-default)",
         "interactionsondarktext-link-default":
           "var(--interactionsondarktext-link-default)",
         "text-staticoncolour": "var(--text-staticoncolour)",
+        "base-neutral-colour-light-grey":
+          "var(--base-neutral-colour-light-grey)",
+        "base-neutral-colour-stone-2": "var(--base-neutral-colour-stone-2)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -54,7 +59,10 @@ const config: Config = {
         "body-link": "var(--body-link-font-family)",
         "body-regular": "var(--body-regular-font-family)",
         "display-extra-large-h1": "var(--display-extra-large-h1-font-family)",
+        "display-large": "var(--display-large-font-family)",
+        "display-medium": "var(--display-medium-font-family)",
         "heading-large": "var(--heading-large-font-family)",
+        "heading-medium": "var(--heading-medium-font-family)",
         sans: [
           "ui-sans-serif",
           "system-ui",

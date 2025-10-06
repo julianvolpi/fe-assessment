@@ -20,6 +20,13 @@ export const CtaSchema = z.object({
   href: z.string().min(1),
 });
 
+export const ClientLogoSchema = z.object({
+  src: z.string().min(1),
+  alt: z.string().min(1),
+  width: z.string().min(1),
+  height: z.string().min(1),
+});
+
 export const HeroBlockSchema = BaseBlockSchema.extend({
   type: z.literal("hero"),
   logoSrc: z.string().min(1),
@@ -29,7 +36,22 @@ export const HeroBlockSchema = BaseBlockSchema.extend({
   subheading: z.string().min(1),
   mediaSrc: z.string().min(1),
   className: z.string().optional(),
-  cards: z.array(CardSchema).min(1),
+  cards: z.array(CardSchema),
+});
+
+export const ManifestoBlockSchema = BaseBlockSchema.extend({
+  type: z.literal("manifesto"),
+  className: z.string().optional(),
+  paragraphs: z.array(z.string()).min(1),
+});
+
+export const ClientScrollerSchema = BaseBlockSchema.extend({
+  type: z.literal("client-scroller"),
+  heading: z.string().min(1),
+  subheading: z.string().min(1),
+  storiesButtonText: z.string().min(1),
+  clientLogos: z.array(ClientLogoSchema),
+  className: z.string().optional(),
 });
 
 export type HeroBlock = z.infer<typeof HeroBlockSchema>;
@@ -47,6 +69,8 @@ export const PageSchema = z.object({
   blocks: z.array(
     z.discriminatedUnion("type", [
       HeroBlockSchema,
+      ManifestoBlockSchema,
+      ClientScrollerSchema,
       // TODO: add other block schemas here
     ])
   ),
