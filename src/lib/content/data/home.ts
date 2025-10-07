@@ -5,10 +5,8 @@ export const homePage: PageDocument = {
   slug: "home",
   title: "Home",
   seo: {
-    // TODO: fill up later
     title: "Add Law - Home",
-    description: "Short SEO description",
-    openGraphImage: "/og/home.png",
+    description: "Landing page for Add Law",
   },
   blocks: [
     {
@@ -17,7 +15,8 @@ export const homePage: PageDocument = {
       heading: "Legal advice that fits your team and fuels your growth",
       subheading:
         "We give clear, decisive guidance that helps you act with confidence, even in ambiguity. Our embedded legal support avoids unnecessary complexity and keeps your legal spend under control.",
-      logoSrc: "/BrandLogo.png",
+      logoSrc: "/BrandLogo.svg",
+      logoDarkSrc: "/BrandLogoDark.svg",
       mediaSrc:
         "https://player.vimeo.com/video/1125004860?background=1&amp;muted=1&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1",
       fullscreenMediaSrc:

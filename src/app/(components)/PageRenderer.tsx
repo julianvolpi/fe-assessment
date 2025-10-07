@@ -11,10 +11,6 @@ import WhatWeDo from "./sections/WhatWeDoModule";
 import CtaModule from "./sections/CTAModule";
 import FooterModule from "./sections/FooterModule";
 
-// TODO: mobile menu for header
-
-// TODO: cleanup unused css variables
-
 // TODO: analyze project with chatgpt for improvements
 
 // TODO: generate readme file as per instructions

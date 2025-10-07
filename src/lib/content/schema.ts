@@ -46,6 +46,7 @@ export const ApproachItemSchema = z.object({
 export const HeroBlockSchema = BaseBlockSchema.extend({
   type: z.literal("hero"),
   logoSrc: z.string().min(1),
+  logoDarkSrc: z.string().min(1),
   navItems: z.array(NavItemSchema).min(1),
   cta: CtaSchema,
   heading: z.string().min(1),
