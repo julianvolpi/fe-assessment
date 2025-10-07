@@ -73,7 +73,7 @@ export default function HeroModule({
 
   return (
     <>
-      <div className="bg-[#2a223f]">
+      <div className="bg-[#2a223f] overflow-x-hidden">
         <div className="flex flex-col items-center gap-[var(--spacing-padding-medium)] pb-[var(--spacing-padding-flex-xlarge)] pt-0 px-0 bg-[#2a223f] max-w-page min-w-page w-full mx-auto">
           {menuOpen && (
             <NavMenu
@@ -144,7 +144,7 @@ export default function HeroModule({
               </div>
 
               <div className="relative mx-auto w-full max-w-[786px] h-[638px] flex items-center justify-center overflow-visible">
-                <div className="pointer-events-none absolute z-0 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[764px] h-[604px] max-w-none">
+                <div className="pointer-events-none absolute z-0 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[764px] h-[604px]">
                   <svg
                     className="block w-full h-full"
                     viewBox="0 0 764 604"
