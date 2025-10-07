@@ -2,6 +2,8 @@
 
 Landing page built with Next.js App Router, Tailwind CSS v4, TypeScript, shadcn/ui primitives and a small content layer typed with Zod. The page is rendered from block data and composed of reusable sections.
 
+Figma Link -> https://www.figma.com/design/odSg7NuB3UqrYR4YtFiQnb/FE-Assessment?node-id=0-1
+
 **Setup**
 
 - Prereqs: Node.js 20+ (LTS recommended)
