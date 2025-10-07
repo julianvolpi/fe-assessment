@@ -6,6 +6,7 @@ import type { Block } from "@/types/blocks";
 import HeroModule from "./sections/HeroModule";
 import ManifestoModule from "./sections/ManifestoModule";
 import ClientScroller from "./sections/ClientScrollerModule";
+import CaseStudies from "./sections/CaseStudiesModule";
 
 function LoadingPage() {
   return (
@@ -42,6 +43,13 @@ function RenderBlock(block: Block): JSX.Element {
 
     case "client-scroller":
       return <ClientScroller {...block} />;
+
+    case "case-studies":
+      return <CaseStudies {...block} />;
+
+    default: {
+      return <div>Unknown block type</div>;
+    }
   }
 }
 

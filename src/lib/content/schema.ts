@@ -27,6 +27,16 @@ export const ClientLogoSchema = z.object({
   height: z.string().min(1),
 });
 
+export const CaseVideosSchema = z.object({
+  thumbnail: z.string().min(1),
+  src: z.string().optional(),
+  alt: z.string().min(1),
+  width: z.number(),
+  height: z.number(),
+  heading: z.string().min(1),
+  subheading: z.string().min(1),
+});
+
 export const HeroBlockSchema = BaseBlockSchema.extend({
   type: z.literal("hero"),
   logoSrc: z.string().min(1),
@@ -54,6 +64,16 @@ export const ClientScrollerSchema = BaseBlockSchema.extend({
   className: z.string().optional(),
 });
 
+export const CaseStudiesSchema = BaseBlockSchema.extend({
+  type: z.literal("case-studies"),
+  heading: z.string().min(1),
+  subheading: z.string().min(1),
+  caseVideos: z.array(CaseVideosSchema),
+  buttonLeftText: z.string().min(1),
+  buttonRightText: z.string().min(1),
+  className: z.string().optional(),
+});
+
 export type HeroBlock = z.infer<typeof HeroBlockSchema>;
 
 export const PageSchema = z.object({
@@ -71,6 +91,7 @@ export const PageSchema = z.object({
       HeroBlockSchema,
       ManifestoBlockSchema,
       ClientScrollerSchema,
+      CaseStudiesSchema,
       // TODO: add other block schemas here
     ])
   ),

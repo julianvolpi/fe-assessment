@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ClientScrollerBlock } from "@/types/blocks";
 
 export default function ClientScroller({
+  id,
   heading,
   subheading,
   storiesButtonText,
@@ -12,7 +13,7 @@ export default function ClientScroller({
 }: ClientScrollerBlock): JSX.Element {
   return (
     <div className="flex flex-col items-center gap-[var(--spacing-padding-flex-xlarge)] pr-[var(--spacing-margins)] pl-[var(--spacing-margins)] pt-[100px] pb-[100px] py-0 relative">
-      <section className="flex flex-col items-start gap-2.5">
+      <section id={id} className="flex flex-col items-start gap-2.5">
         <div className="flex items-start gap-10 pt-[var(--spacing-padding-small)] pb-[var(--spacing-padding-small)] px-0 w-full border-t border-solid border-[#d9d9d9]">
           <div className="flex-col items-start gap-[var(--spacing-padding-flex-large)] flex-1 flex">
             <div className="flex-col items-start gap-[var(--spacing-padding-flex-xsmall)] w-full flex">

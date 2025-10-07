@@ -19,7 +19,7 @@ export const homePage: PageDocument = {
         "We give clear, decisive guidance that helps you act with confidence, even in ambiguity. Our embedded legal support avoids unnecessary complexity and keeps your legal spend under control.",
       logoSrc: "/BrandLogo.png",
       mediaSrc:
-        "https://player.vimeo.com/video/1124516461?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1",
+        "https://player.vimeo.com/video/1125004860?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;loop=1",
       navItems: [
         { label: "What we do", href: "/#what-we-do" },
         { label: "Case studies", href: "/#case-studies" },
@@ -111,6 +111,35 @@ export const homePage: PageDocument = {
           height: "h-[33.36px]",
         },
       ],
+    },
+    {
+      id: "case-studies",
+      type: "case-studies",
+      heading: "Flexible, focused and built around you.",
+      subheading:
+        "Real stories from clients who value clear thinking, fast answers and legal solutions that fit their business.",
+      caseVideos: [
+        {
+          thumbnail: "/case1.png",
+          alt: "Case study 1",
+          width: 714,
+          height: 491,
+          heading: "A Business Partner First",
+          subheading:
+            "We're much more business focused than a typical law firm.",
+        },
+        {
+          thumbnail: "/case2.png",
+          alt: "Case study 2",
+          width: 714,
+          height: 491,
+          heading: "A Growth Partner",
+          subheading:
+            "We work with companies to drive their growth as a speciality.",
+        },
+      ],
+      buttonLeftText: "All Client Stories",
+      buttonRightText: "Talk to us",
     },
   ],
 };

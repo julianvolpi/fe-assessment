@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { HeroBlock } from "@/types/blocks";
-import { Play, Menu, Plus } from "lucide-react";
+import { Menu } from "lucide-react";
 import React, { JSX } from "react";
+import Image from "next/image";
 
-// TODO: solve logo not loading
 export default function HeroModule({
   heading,
   subheading,
@@ -14,12 +14,16 @@ export default function HeroModule({
   navItems,
   cards,
 }: HeroBlock): JSX.Element {
-  const logoCn = `relative w-[128.56px] h-[19px] bg-[url(${logoSrc})] bg-[100%_100%]`;
-
   return (
     <div className="flex flex-col items-center gap-[var(--spacing-padding-medium)] pb-[var(--spacing-padding-flex-xlarge)] pt-0 px-0 bg-[#2a223f]">
       <header className="flex max-w-screen-2xl h-[73px] items-center justify-between pt-[var(--spacing-padding-xsmall)] pr-[var(--spacing-margins)] pb-[var(--spacing-padding-xsmall)] pl-[var(--spacing-margins)] w-full bg-transparent">
-        <div className={logoCn} />
+        <Image
+          className="relative w-[129px] h-[19px] bg-[100%_100%]"
+          alt="Brand logo"
+          src={logoSrc}
+          width={129}
+          height={19}
+        />
 
         <nav className="hidden lg:inline-flex items-center justify-end gap-[var(--spacing-padding-medium)] flex-[0_0_auto]">
           <div className="inline-flex flex-wrap items-center gap-[var(--spacing-padding-medium)] flex-[0_0_auto]">
@@ -90,22 +94,12 @@ export default function HeroModule({
                 referrerPolicy="strict-origin-when-cross-origin"
                 title="Intro-short-Sm-v1.1"
               ></iframe>
-              <Button
-                variant="secondary"
-                className="absolute bottom-4 left-1/2 -translate-x-1/2 h-auto px-4 py-2 bg-white/90 hover:bg-white"
-              >
-                <Play className="w-4 h-4 mr-2" />
-                <span className="font-body-link font-[number:var(--body-link-font-weight)] text-[#2a223f] text-[length:var(--body-link-font-size)]">
-                  Discover Add.Law
-                </span>
-              </Button>
             </div>
           </div>
         </section>
 
         <section className="max-w-[1512px] min-w-[342px] justify-center w-full flex-[0_0_auto] flex flex-col lg:flex-row items-start gap-[var(--spacing-padding-flex-xsmall)]">
           {cards.map((feature, index) => {
-            const IconComponent = Plus;
             return (
               <Card
                 key={index}
@@ -114,7 +108,13 @@ export default function HeroModule({
                 <CardContent className="items-start gap-[var(--spacing-padding-small)] self-stretch w-full flex-[0_0_auto] flex flex-col p-0">
                   <div className="flex w-9 h-9 items-center justify-center gap-2.5 px-[3px] py-1.5 rounded overflow-hidden border border-solid border-white rotate-90">
                     <div className="w-6 h-6 -rotate-90 flex items-center justify-center">
-                      <IconComponent className="w-[60%] h-[50%] text-white" />
+                      <Image
+                        src="/ALPlus.svg"
+                        alt="Icon"
+                        className="text-white"
+                        width={24}
+                        height={24}
+                      />
                     </div>
                   </div>
 
