@@ -14,17 +14,17 @@ const CaseStudies = ({
   buttonRightText,
 }: CaseStudiesBlock): JSX.Element => {
   return (
-    <div className="flex flex-col items-center gap-[var(--spacing-padding-flex-xlarge)] pr-[var(--spacing-margins)] pl-[var(--spacing-margins)] pt-[100px] pb-[100px] py-0 relative">
+    <div className="flex flex-col items-center gap-[var(--spacing-padding-flex-xlarge)] pr-[var(--spacing-margins)] pl-[var(--spacing-margins)] pt-[100px] pb-[100px] relative w-full">
       <section
         id={id}
-        className="flex flex-col items-start gap-[var(--spacing-padding-flex-large)] relative"
+        className="flex flex-col items-start w-full max-w-[1512px] gap-[var(--spacing-padding-flex-large)] relative mx-auto"
       >
         <header className="flex flex-col items-start gap-[var(--spacing-padding-small)] pt-[var(--spacing-padding-medium)] pb-[var(--spacing-padding-medium)] px-0 relative self-stretch w-full flex-[0_0_auto] border-t [border-top-style:solid] border-[#d9d9d9]">
           <h1 className="relative self-stretch mt-[-1.00px] font-display-large font-[number:var(--display-large-font-weight)] text-[#201a2f] text-[length:var(--display-medium-h1-font-size)] md:text-[length:var(--display-large-font-size)] tracking-[var(--display-large-letter-spacing)] leading-[var(--display-large-line-height)] [font-style:var(--display-large-font-style)]">
             {heading}
           </h1>
 
-          <p className="relative self-stretch font-body-large font-[number:var(--body-large-font-weight)] text-[#201a2f] text-[length:var(--body-medium-font-size)] md: text-[length:var(--body-large-font-size)] tracking-[var(--body-large-letter-spacing)] leading-[var(--body-large-line-height)] [font-style:var(--body-large-font-style)]">
+          <p className="relative self-stretch font-body-large font-[number:var(--body-large-font-weight)] text-[#201a2f] text-[length:var(--body-medium-font-size)] md:text-[length:var(--body-large-font-size)] tracking-[var(--body-large-letter-spacing)] leading-[var(--body-large-line-height)] [font-style:var(--body-large-font-style)]">
             {subheading}
           </p>
         </header>
@@ -63,7 +63,7 @@ const CaseStudies = ({
                       {caseStudy.heading}
                     </h2>
 
-                    <p className="relative self-stretch font-body-large font-[number:var(--body-large-font-weight)] text-[#201a2f] text-[length:var(--body-medium-font-size)] md: text-[length:var(--body-large-font-size)] tracking-[var(--body-large-letter-spacing)] leading-[var(--body-large-line-height)] [font-style:var(--body-large-font-style)]">
+                    <p className="relative self-stretch font-body-large font-[number:var(--body-large-font-weight)] text-[#201a2f] text-[length:var(--body-medium-font-size)] md:text-[length:var(--body-large-font-size)] tracking-[var(--body-large-letter-spacing)] leading-[var(--body-large-line-height)] [font-style:var(--body-large-font-style)]">
                       {caseStudy.subheading}
                     </p>
                   </div>
@@ -73,7 +73,7 @@ const CaseStudies = ({
           ))}
         </div>
 
-        <div className="inline-flex items-center gap-3.5 relative flex-[0_0_auto]">
+        <div className="inline-flex items-start gap-3.5 relative flex-[0_0_auto]">
           <Button
             variant="outline"
             className="h-11 pt-[var(--spacing-padding-xsmall)] pr-[var(--spacing-padding-xsmall)] pb-[var(--spacing-padding-xsmall)] pl-[var(--spacing-padding-xsmall)] border-[#2a223f] font-body-link font-[number:var(--body-link-font-weight)] text-[#2a223f] text-[length:var(--body-link-font-size)] tracking-[var(--body-link-letter-spacing)] leading-[var(--body-link-line-height)] [font-style:var(--body-link-font-style)] hover:bg-transparent hover:text-[#2a223f]"

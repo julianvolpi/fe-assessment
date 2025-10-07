@@ -3,10 +3,10 @@ import React from "react";
 
 const ManifestoModule = ({ id, paragraphs }: ManifestoBlock) => {
   return (
-    <div className="flex flex-col items-center gap-[var(--spacing-padding-flex-xlarge)] pr-[var(--spacing-margins)] pl-[var(--spacing-margins)] pt-[100px] pb-[100px] py-0 relative">
+    <div className="flex flex-col items-center gap-[var(--spacing-padding-flex-xlarge)] pr-[var(--spacing-margins)] pl-[var(--spacing-margins)] pt-[100px] pb-[100px] relative w-full">
       <section
         id={id}
-        className="min-w-[342px] max-w-[1512px] flex flex-col items-start gap-9 relative rounded-xl overflow:hidden"
+        className="w-full min-w-[342px] max-w-[1512px] flex flex-col items-start gap-9 relative rounded-xl overflow:hidden mx-auto"
       >
         {paragraphs.map((para, index) => (
           <p

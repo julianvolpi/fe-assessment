@@ -27,7 +27,7 @@ export const ClientLogoSchema = z.object({
   height: z.string().min(1),
 });
 
-export const CaseVideosSchema = z.object({
+export const CaseVideoSchema = z.object({
   thumbnail: z.string().min(1),
   src: z.string().optional(),
   alt: z.string().min(1),
@@ -35,6 +35,12 @@ export const CaseVideosSchema = z.object({
   height: z.number(),
   heading: z.string().min(1),
   subheading: z.string().min(1),
+});
+
+export const ApproachItemSchema = z.object({
+  number: z.string().min(1),
+  title: z.string().min(1),
+  description: z.string().min(1),
 });
 
 export const HeroBlockSchema = BaseBlockSchema.extend({
@@ -68,13 +74,36 @@ export const CaseStudiesSchema = BaseBlockSchema.extend({
   type: z.literal("case-studies"),
   heading: z.string().min(1),
   subheading: z.string().min(1),
-  caseVideos: z.array(CaseVideosSchema),
+  caseVideos: z.array(CaseVideoSchema),
   buttonLeftText: z.string().min(1),
   buttonRightText: z.string().min(1),
   className: z.string().optional(),
 });
 
-export type HeroBlock = z.infer<typeof HeroBlockSchema>;
+export const WhatWeDoSchema = BaseBlockSchema.extend({
+  type: z.literal("what-we-do"),
+  heading: z.string().min(1),
+  approachItems: z.array(ApproachItemSchema).min(4),
+  buttonText: z.string().min(1),
+  className: z.string().optional(),
+});
+
+export const CTABlockSchema = BaseBlockSchema.extend({
+  type: z.literal("cta"),
+  heading: z.string().min(1),
+  description: z.string().min(1),
+  buttonText: z.string().min(1),
+});
+
+export const FooterSchema = BaseBlockSchema.extend({
+  type: z.literal("footer"),
+  logoSrc: z.string().min(1),
+  navItems: z.array(NavItemSchema).min(1),
+  connectItems: z.array(NavItemSchema).min(1),
+  contactItems: z.array(z.string()).min(1),
+  subheading: z.string().min(1),
+  className: z.string().optional(),
+});
 
 export const PageSchema = z.object({
   slug: z.string(),
@@ -92,9 +121,10 @@ export const PageSchema = z.object({
       ManifestoBlockSchema,
       ClientScrollerSchema,
       CaseStudiesSchema,
-      // TODO: add other block schemas here
+      WhatWeDoSchema,
+      CTABlockSchema,
+      FooterSchema,
+      // add other block schemas here
     ])
   ),
 });
-
-export type PageDocument = z.infer<typeof PageSchema>;

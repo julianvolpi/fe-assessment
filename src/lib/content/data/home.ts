@@ -23,8 +23,8 @@ export const homePage: PageDocument = {
       navItems: [
         { label: "What we do", href: "/#what-we-do" },
         { label: "Case studies", href: "/#case-studies" },
-        { label: "Services", href: "/#services" },
-        { label: "How we partner", href: "/#how-we-partner" },
+        { label: "Services", href: "/#cta" },
+        { label: "How we partner", href: "/#client-scroller" },
       ],
       cta: { label: "Talk to us", href: "/#contact" },
       cards: [
@@ -140,6 +140,68 @@ export const homePage: PageDocument = {
       ],
       buttonLeftText: "All Client Stories",
       buttonRightText: "Talk to us",
+    },
+    {
+      id: "what-we-do",
+      type: "what-we-do",
+      heading: "Our approach, built for business",
+      approachItems: [
+        {
+          number: "1",
+          title: "Beyond legal advice, truly commercial guidance",
+          description:
+            "Legal is never a stand-alone function,  it's integrated into the whole firm",
+        },
+        {
+          number: "2",
+          title: "Expertise that's embedded in your business",
+          description: "Trusted people, trusted advice, trusted solutions",
+        },
+        {
+          number: "3",
+          title: "An efficient and effective legal approach",
+          description:
+            "Big company legal capabilities without the huge expense",
+        },
+        {
+          number: "4",
+          title: "A rapid response to every challenge at every step",
+          description: "Direct involvement in your business",
+        },
+      ],
+      buttonText: "Discover what we do",
+    },
+    {
+      id: "cta",
+      type: "cta",
+      heading: "Whatever your challenge,\ntalk to us.",
+      description:
+        "If you're facing a legal question or simply want to explore how we can support your business, we offer a free strategy call to learn more about your goals. It's a chance to talk things through and see how we can help you move forward with confidence.",
+      buttonText: "Talk to us",
+    },
+    {
+      id: "footer",
+      type: "footer",
+      navItems: [
+        { label: "What we do", href: "/#what-we-do" },
+        { label: "Testimonials", href: "/#case-studies" },
+        { label: "Services", href: "/#cta" },
+        { label: "Work with us", href: "/#footer" },
+      ],
+      connectItems: [
+        {
+          label: "LinkedIn",
+          href: "https://www.linkedin.com/company/add-law/",
+        },
+      ],
+      contactItems: [
+        "contact@add.law",
+        "London:\n+44 (0)808 5022 401",
+        "Toronto:\n+1 647 6960645",
+        "NYC:\n+1 646 6063886",
+      ],
+      logoSrc: "/BrandLogo.png",
+      subheading: "Specialists in law for growing businesses",
     },
   ],
 };

@@ -7,6 +7,11 @@ import HeroModule from "./sections/HeroModule";
 import ManifestoModule from "./sections/ManifestoModule";
 import ClientScroller from "./sections/ClientScrollerModule";
 import CaseStudies from "./sections/CaseStudiesModule";
+import WhatWeDo from "./sections/WhatWeDoModule";
+import CtaModule from "./sections/CTAModule";
+import FooterModule from "./sections/FooterModule";
+
+// TODO: links
 
 function LoadingPage() {
   return (
@@ -46,6 +51,15 @@ function RenderBlock(block: Block): JSX.Element {
 
     case "case-studies":
       return <CaseStudies {...block} />;
+
+    case "what-we-do":
+      return <WhatWeDo {...block} />;
+
+    case "cta":
+      return <CtaModule {...block} />;
+
+    case "footer":
+      return <FooterModule {...block} />;
 
     default: {
       return <div>Unknown block type</div>;

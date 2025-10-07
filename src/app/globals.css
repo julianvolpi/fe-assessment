@@ -8,6 +8,7 @@
 }
 
 :root {
+  --base-brand-colour-primary-30: rgba(162, 156, 206, 1);
   --base-brand-colour-secondary-90: rgba(42, 34, 63, 1);
   --base-brand-colour-secondary-100: rgba(32, 26, 47, 1);
   --base-neutral-colour-oncolour-1: rgba(255, 255, 255, 1);
@@ -32,6 +33,12 @@
   --body-regular-font-weight: 400;
   --body-regular-letter-spacing: 0px;
   --body-regular-line-height: 140%;
+  --body-small-font-family: "Figtree", Helvetica;
+  --body-small-font-size: 16px;
+  --body-small-font-style: normal;
+  --body-small-font-weight: 400;
+  --body-small-letter-spacing: 0px;
+  --body-small-line-height: 150%;
   --collection-1-white: rgba(255, 255, 255, 1);
   --colour-state-ondark-default: var(--base-neutral-colour-oncolour-1);
   --colour-state-onlight-default: var(--base-brand-colour-secondary-90);
@@ -69,28 +76,32 @@
   --heading-medium-font-weight: 600;
   --heading-medium-letter-spacing: 0px;
   --heading-medium-line-height: normal;
+  --heading-small-font-size: 20px;
+  --heading-regular-font-family: "Figtree", Helvetica;
+  --heading-regular-font-size: 18px;
+  --heading-regular-font-style: normal;
+  --heading-regular-font-weight: 500;
+  --heading-regular-letter-spacing: 0px;
+  --heading-regular-line-height: normal;
+  --heading-small-font-family: "Figtree", Helvetica;
+  --heading-small-font-size: 16px;
+  --heading-small-font-style: normal;
+  --heading-small-font-weight: 500;
+  --heading-small-letter-spacing: 0px;
+  --heading-small-line-height: normal;
   --interactionsondarktext-link-default: rgba(255, 255, 255, 1);
   --spacing-margins: 36px;
   --spacing-padding-flex-xlarge: 160px;
+  --spacing-padding-flex-xlarge1: 120px;
+  --spacing-padding-flex-xlarge2: 100px;
   --spacing-padding-flex-large: 76px;
+  --spacing-padding-flex-large1: 60px;
   --spacing-padding-flex-xsmall: 36px;
   --spacing-padding-medium: 36px;
   --spacing-padding-small: 24px;
   --spacing-padding-xsmall: 12px;
   --text-staticoncolour: rgba(255, 255, 255, 1);
 }
-
-/*
-
-To enable a theme in your HTML, simply add one of the following data attributes to an HTML element, like so:
-
-<body data-spacing-mode="desktop">
-    <!-- the rest of your content -->
-</body>
-
-You can apply the theme on any DOM node, not just the `body`
-
-*/
 
 [data-spacing-mode="desktop"] {
   --spacing-margins: 36px;

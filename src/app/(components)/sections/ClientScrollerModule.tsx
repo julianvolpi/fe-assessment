@@ -12,8 +12,11 @@ export default function ClientScroller({
   clientLogos,
 }: ClientScrollerBlock): JSX.Element {
   return (
-    <div className="flex flex-col items-center gap-[var(--spacing-padding-flex-xlarge)] pr-[var(--spacing-margins)] pl-[var(--spacing-margins)] pt-[100px] pb-[100px] py-0 relative">
-      <section id={id} className="flex flex-col items-start gap-2.5">
+    <div className="flex flex-col items-center gap-[var(--spacing-padding-flex-xlarge)] pr-[var(--spacing-margins)] pl-[var(--spacing-margins)] pt-[100px] pb-[100px] relative w-full">
+      <section
+        id={id}
+        className="flex flex-col items-start gap-2.5 w-full max-w-[1512px] mx-auto"
+      >
         <div className="flex items-start gap-10 pt-[var(--spacing-padding-small)] pb-[var(--spacing-padding-small)] px-0 w-full border-t border-solid border-[#d9d9d9]">
           <div className="flex-col items-start gap-[var(--spacing-padding-flex-large)] flex-1 flex">
             <div className="flex-col items-start gap-[var(--spacing-padding-flex-xsmall)] w-full flex">
