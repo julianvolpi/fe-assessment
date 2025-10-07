@@ -143,7 +143,7 @@ export default function HeroModule({
                 </p>
               </div>
 
-              <div className="relative mx-auto w-full max-w-[786px] h-[638px] flex items-center justify-center overflow-visible">
+              <div className="relative mx-auto w-full max-w-[786px] h-[638px] flex items-center justify-center overflow-hidden">
                 <div className="pointer-events-none absolute z-0 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[764px] h-[604px] max-w-none">
                   <svg
                     className="block w-full h-full"
@@ -227,3 +227,4 @@ export default function HeroModule({
     </>
   );
 }
+

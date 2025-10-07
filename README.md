@@ -67,6 +67,7 @@ Landing page built with Next.js App Router, Tailwind CSS v4, TypeScript, shadcn/
   - Lack of tests
   - Implementation of lazy loading for certain components / performance in general
   - Better SEO handling
+- Couldn't find the exact same font `Tiempos Headline; Helvetica` so decided to just let it default to another one.
 - Vimeo preview UI: hide with `background=1&muted=1&autoplay=1&loop=1&playsinline=1&badge=0` on the inline preview; provide a separate fullscreen URL with controls.
 - Smooth anchor scrolling: `html` has `scroll-smooth`; ensure header offsets if needed.
 - Content API route: confirm `src/app/api/content/page/[slug]/route.ts` returns `home.ts` data in production builds.
