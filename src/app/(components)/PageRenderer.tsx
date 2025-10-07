@@ -11,10 +11,6 @@ import WhatWeDo from "./sections/WhatWeDoModule";
 import CtaModule from "./sections/CTAModule";
 import FooterModule from "./sections/FooterModule";
 
-// TODO: analyze project with chatgpt for improvements
-
-// TODO: generate readme file as per instructions
-
 function LoadingPage() {
   return (
     <main className="container mx-auto py-24">
