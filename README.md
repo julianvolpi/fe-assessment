@@ -71,6 +71,7 @@ An already running version can be accessed here -> https://fe-assessment-lovat.v
   - Lack of tests
   - Implementation of lazy loading for certain components / performance in general
   - Better SEO handling
+- Some buttons won't do anything because it wasn't entirely clear what they are supposed to do. (e.g., `Talk to us`).
 - Couldn't find the exact same font `Tiempos Headline; Helvetica` so decided to just let it default to another one.
 - Vimeo preview UI: hide with `background=1&muted=1&autoplay=1&loop=1&playsinline=1&badge=0` on the inline preview; provide a separate fullscreen URL with controls.
 - Smooth anchor scrolling: `html` has `scroll-smooth`; ensure header offsets if needed.
