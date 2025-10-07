@@ -1,8 +1,5 @@
 import type { Config } from "tailwindcss";
 
-// TODO: setup a global max width and min width for the page content
-// e.g. max-width: 1512px; min-width: 320px;
-
 const config: Config = {
   content: [
     "./src/**/*.{html,js,ts,jsx,tsx}",

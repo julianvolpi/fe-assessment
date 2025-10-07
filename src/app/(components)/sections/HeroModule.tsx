@@ -4,6 +4,7 @@ import { HeroBlock } from "@/types/blocks";
 import { Menu } from "lucide-react";
 import React, { JSX } from "react";
 import Image from "next/image";
+import alplus from "../../../../public/ALplus.svg";
 
 export default function HeroModule({
   heading,
@@ -111,15 +112,9 @@ export default function HeroModule({
                   className="flex-col flex-1 flex items-start gap-[var(--spacing-padding-medium)] border-0 w-full lg:flex-1 lg:grow"
                 >
                   <CardContent className="items-start gap-[var(--spacing-padding-small)] self-stretch w-full flex-[0_0_auto] flex flex-col p-0">
-                    <div className="flex w-9 h-9 items-center justify-center gap-2.5 px-[3px] py-1.5 rounded overflow-hidden border border-solid border-white rotate-90">
-                      <div className="w-6 h-6 -rotate-90 flex items-center justify-center">
-                        <Image
-                          src="/ALPlus.svg"
-                          alt="Icon"
-                          className="text-white"
-                          width={24}
-                          height={24}
-                        />
+                    <div className="flex w-9 h-9 items-center justify-center rounded overflow-hidden border border-solid border-white">
+                      <div className="w-6 h-6 flex items-center justify-center">
+                        <Image src={alplus} alt="Icon" className="text-white" />
                       </div>
                     </div>
 
