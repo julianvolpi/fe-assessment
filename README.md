@@ -89,3 +89,9 @@ Landing page built with Next.js App Router, Tailwind CSS v4, TypeScript, shadcn/
 
 - Keep layout bounds consistent with `w-full max-w-page min-w-page mx-auto`.
 - Prefer Tailwind tokens over raw values; if a value repeats, promote to a CSS var or theme key.
+
+**AI Usage**
+
+- Design-to-code: Used Anima to convert the Figma design into JSX/Tailwind and scaffold shadcn/ui pieces where helpful.
+- Data flow design: Used AI to help design the content flow for fetching typed blocks from a CMS (Zod schemas, React Query usage, and mapping into sections).
+- Iteration: Used AI for small design fixes and autocompletion during implementation.

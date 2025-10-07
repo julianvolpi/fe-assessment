@@ -9,6 +9,7 @@ export default function ClientScroller({
   heading,
   subheading,
   storiesButtonText,
+  storiesButtonLink,
   clientLogos,
 }: ClientScrollerBlock): JSX.Element {
   return (
@@ -34,7 +35,7 @@ export default function ClientScroller({
                 variant="outline"
                 className="h-11 pt-[var(--spacing-padding-xsmall)] pr-[var(--spacing-padding-xsmall)] pb-[var(--spacing-padding-xsmall)] pl-[var(--spacing-padding-xsmall)] rounded border border-solid border-[#2a223f] font-body-link font-[number:var(--body-link-font-weight)] text-[#2a223f] text-[length:var(--body-link-font-size)] tracking-[var(--body-link-letter-spacing)] leading-[var(--body-link-line-height)] [font-style:var(--body-link-font-style)]"
               >
-                {storiesButtonText}
+                <a href={storiesButtonLink}>{storiesButtonText}</a>
               </Button>
             </div>
 

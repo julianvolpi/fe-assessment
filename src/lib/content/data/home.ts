@@ -62,6 +62,7 @@ export const homePage: PageDocument = {
       subheading:
         "We are trusted by a wide range of successful businesses, each with unique challenges and needs.",
       storiesButtonText: "Watch our client stories",
+      storiesButtonLink: "/#case-studies",
       clientLogos: [
         {
           src: "/Group.svg",

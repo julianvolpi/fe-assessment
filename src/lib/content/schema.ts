@@ -68,6 +68,7 @@ export const ClientScrollerSchema = BaseBlockSchema.extend({
   heading: z.string().min(1),
   subheading: z.string().min(1),
   storiesButtonText: z.string().min(1),
+  storiesButtonLink: z.string().min(1),
   clientLogos: z.array(ClientLogoSchema),
   className: z.string().optional(),
 });
