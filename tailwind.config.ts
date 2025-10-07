@@ -8,6 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        page: "1512px",
+      },
+      minWidth: {
+        page: "250px",
+      },
       colors: {
         "base-brand-colour-secondary-100":
           "var(--base-brand-colour-secondary-100)",

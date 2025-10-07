@@ -15,17 +15,17 @@ export default function ClientScroller({
     <div className="flex flex-col items-center gap-[var(--spacing-padding-flex-xlarge)] pr-[var(--spacing-margins)] pl-[var(--spacing-margins)] pt-[100px] pb-[100px] relative w-full">
       <section
         id={id}
-        className="flex flex-col items-start gap-2.5 w-full max-w-[1512px] mx-auto"
+        className="flex flex-col items-start gap-2.5 w-full max-w-page min-w-page mx-auto"
       >
-        <div className="flex items-start gap-10 pt-[var(--spacing-padding-small)] pb-[var(--spacing-padding-small)] px-0 w-full border-t border-solid border-[#d9d9d9]">
-          <div className="flex-col items-start gap-[var(--spacing-padding-flex-large)] flex-1 flex">
-            <div className="flex-col items-start gap-[var(--spacing-padding-flex-xsmall)] w-full flex">
-              <div className="flex-col max-w-[606px] items-start gap-[var(--spacing-padding-xsmall)] w-full flex">
-                <h2 className="self-stretch mt-[-1.00px] font-heading-medium font-[number:var(--heading-medium-font-weight)] text-[#201a2f] text-[length:var(--heading-medium-font-size)] tracking-[var(--heading-medium-letter-spacing)] leading-[var(--heading-medium-line-height)] [font-style:var(--heading-medium-font-style)]">
+        <div className="flex items-start gap-10 pt-[var(--spacing-padding-small)] pb-[var(--spacing-padding-small)] px-0 w-full min-w-0 border-t border-solid border-[#d9d9d9]">
+          <div className="flex-col items-start gap-[var(--spacing-padding-flex-large)] flex-1 flex min-w-0">
+            <div className="flex-col items-start gap-[var(--spacing-padding-flex-xsmall)] w-full flex min-w-0">
+              <div className="flex-col max-w-[606px] items-start gap-[var(--spacing-padding-xsmall)] w-full flex min-w-0">
+                <h2 className=" mt-[-1.00px] font-heading-medium font-[number:var(--heading-medium-font-weight)] text-[#201a2f] text-[length:var(--heading-medium-font-size)] tracking-[var(--heading-medium-letter-spacing)] leading-[var(--heading-medium-line-height)] [font-style:var(--heading-medium-font-style)] break-words">
                   {heading}
                 </h2>
 
-                <p className="self-stretch font-body-regular font-[number:var(--body-regular-font-weight)] text-[#201a2f] text-[length:var(--body-regular-font-size)] tracking-[var(--body-regular-letter-spacing)] leading-[var(--body-regular-line-height)] [font-style:var(--body-regular-font-style)]">
+                <p className="self-stretch font-body-regular font-[number:var(--body-regular-font-weight)] text-[#201a2f] text-[length:var(--body-regular-font-size)] tracking-[var(--body-regular-letter-spacing)] leading-[var(--body-regular-line-height)] [font-style:var(--body-regular-font-style)] break-words">
                   {subheading}
                 </p>
               </div>

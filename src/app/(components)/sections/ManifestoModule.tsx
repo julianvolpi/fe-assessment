@@ -6,7 +6,7 @@ const ManifestoModule = ({ id, paragraphs }: ManifestoBlock) => {
     <div className="flex flex-col items-center gap-[var(--spacing-padding-flex-xlarge)] pr-[var(--spacing-margins)] pl-[var(--spacing-margins)] pt-[100px] pb-[100px] relative w-full">
       <section
         id={id}
-        className="w-full min-w-[342px] max-w-[1512px] flex flex-col items-start gap-9 relative rounded-xl overflow:hidden mx-auto"
+        className="w-full min-w-page max-w-page flex flex-col items-start gap-9 relative rounded-xl overflow:hidden mx-auto"
       >
         {paragraphs.map((para, index) => (
           <p

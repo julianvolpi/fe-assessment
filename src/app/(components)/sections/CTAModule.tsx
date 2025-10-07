@@ -20,8 +20,8 @@ export default function CtaModule({
         border-0
         mx-auto
         w-full
-        max-w-[1512px]
-        min-w-[250px]
+        max-w-page
+        min-w-page
         pt-[var(--spacing-padding-flex-xlarge2)]
         pr-[var(--spacing-padding-small)]
         pb-[var(--spacing-padding-flex-xlarge2)]
@@ -42,7 +42,7 @@ export default function CtaModule({
               {heading}
             </h2>
 
-            <div className="flex-col min-w-[280px] gap-9 flex-1 grow flex items-start relative">
+            <div className="flex-col  gap-9 flex-1 grow flex items-start relative">
               <p className="relative self-stretch mt-[-1.00px] font-body-regular font-[number:var(--body-regular-font-weight)] text-text-staticoncolour text-[length:var(--body-regular-font-size)] tracking-[var(--body-regular-letter-spacing)] leading-[var(--body-regular-line-height)] [font-style:var(--body-regular-font-style)]">
                 {description}
               </p>

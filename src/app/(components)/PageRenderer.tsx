@@ -11,14 +11,9 @@ import WhatWeDo from "./sections/WhatWeDoModule";
 import CtaModule from "./sections/CTAModule";
 import FooterModule from "./sections/FooterModule";
 
-// TODO: icons not loading in vercel, check why
-// TODO: smooth scrolling for anchor links
 // TODO: mobile menu for header
 // TODO: fullscreen video reproduction
 // TODO: hide vimeo video controls for preview -> not sure if possible with free account
-
-// TODO: setup a global max width and min width for the page content
-// e.g. max-width: 1512px; min-width: 320px;
 
 // TODO: cleanup unused css variables
 

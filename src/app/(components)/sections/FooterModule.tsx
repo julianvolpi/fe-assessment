@@ -12,12 +12,9 @@ export default function FooterModule({
   subheading,
 }: FooterBlock) {
   return (
-    <footer
-      id={id}
-      className="flex flex-wrap items-start justify-center gap-[0px_0px] pt-[var(--spacing-padding-flex-large)] pr-[var(--spacing-padding-medium)] pb-[var(--spacing-padding-flex-large)] pl-[var(--spacing-padding-medium)] bg-[#2a223f]"
-    >
-      <div className="flex flex-col md:flex-row flex-wrap max-w-[1512px] justify-center gap-[var(--spacing-padding-flex-large)] flex-1 grow items-start">
-        <div className="pl-3 flex flex-col min-w-80 items-start gap-[var(--spacing-padding-small)] flex-1 grow">
+    <footer id={id} className="bg-[#2a223f] w-full">
+      <div className="flex flex-col md:flex-row flex-wrap max-w-page min-w-page justify-center gap-[var(--spacing-padding-flex-large)] flex-1 grow items-start mx-auto w-full pl-[var(--spacing-padding-medium)] pt-[var(--spacing-padding-flex-large)] pr-[var(--spacing-padding-medium)] pb-[var(--spacing-padding-flex-large)]">
+        <div className="pl-3 flex flex-col items-start gap-[var(--spacing-padding-small)] flex-1 grow">
           <Image
             className="relative w-[129px] h-[19px] bg-[100%_100%]"
             alt="Brand logo"

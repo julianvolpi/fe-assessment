@@ -17,7 +17,7 @@ export default function HeroModule({
 }: HeroBlock): JSX.Element {
   return (
     <div className="bg-[#2a223f]">
-      <div className="flex flex-col items-center gap-[var(--spacing-padding-medium)] pb-[var(--spacing-padding-flex-xlarge)] pt-0 px-0 bg-[#2a223f] max-w-[1512px] w-full mx-auto">
+      <div className="flex flex-col items-center gap-[var(--spacing-padding-medium)] pb-[var(--spacing-padding-flex-xlarge)] pt-0 px-0 bg-[#2a223f] max-w-page min-w-page w-full mx-auto">
         <header className="flex max-w-screen-2xl h-[73px] items-center justify-between pt-[var(--spacing-padding-xsmall)] pr-[var(--spacing-margins)] pb-[var(--spacing-padding-xsmall)] pl-[var(--spacing-margins)] w-full bg-transparent">
           <Image
             className="relative w-[129px] h-[19px] bg-[100%_100%]"
@@ -66,7 +66,7 @@ export default function HeroModule({
 
         <main className="max-w-screen-2xl items-start gap-[var(--spacing-padding-flex-xlarge)] pr-[var(--spacing-margins)] pl-[var(--spacing-margins)] py-0 w-full flex-[0_0_auto] flex flex-col">
           <section className="flex-wrap gap-[var(--spacing-padding-flex-xsmall)] self-stretch w-full flex-[0_0_auto] flex items-center">
-            <div className="min-w-[342px] items-start justify-center gap-[var(--spacing-padding-flex-xsmall)] pr-[var(--spacing-padding-medium)] pl-0 py-0 flex-1 grow flex flex-col">
+            <div className="items-start justify-center gap-[var(--spacing-padding-flex-xsmall)] pr-[var(--spacing-padding-medium)] pl-0 py-0 flex-1 grow flex flex-col">
               <h1 className="self-stretch mt-[-1.00px] font-display-extra-large-h1 font-[number:var(--display-extra-large-h1-font-weight)] text-text-staticoncolour text-[length:var(--display-large-h1-font-size)] md:text-[length:var(--display-extra-large-h1-font-size)] tracking-[var(--display-extra-large-h1-letter-spacing)] leading-[var(--display-extra-large-h1-line-height)] [font-style:var(--display-extra-large-h1-font-style)]">
                 {heading}
               </h1>
@@ -104,7 +104,7 @@ export default function HeroModule({
             </div>
           </section>
 
-          <section className="max-w-[1512px] min-w-[342px] justify-center w-full flex-[0_0_auto] flex flex-col lg:flex-row items-start gap-[var(--spacing-padding-flex-xsmall)]">
+          <section className="justify-center w-full flex-[0_0_auto] flex flex-col lg:flex-row items-start gap-[var(--spacing-padding-flex-xsmall)]">
             {cards.map((feature, index) => {
               return (
                 <Card

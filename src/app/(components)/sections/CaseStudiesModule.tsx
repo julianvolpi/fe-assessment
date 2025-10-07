@@ -17,7 +17,7 @@ const CaseStudies = ({
     <div className="flex flex-col items-center gap-[var(--spacing-padding-flex-xlarge)] pr-[var(--spacing-margins)] pl-[var(--spacing-margins)] pt-[100px] pb-[100px] relative w-full">
       <section
         id={id}
-        className="flex flex-col items-start w-full max-w-[1512px] gap-[var(--spacing-padding-flex-large)] relative mx-auto"
+        className="flex flex-col items-start w-full max-w-page min-w-page gap-[var(--spacing-padding-flex-large)] relative mx-auto"
       >
         <header className="flex flex-col items-start gap-[var(--spacing-padding-small)] pt-[var(--spacing-padding-medium)] pb-[var(--spacing-padding-medium)] px-0 relative self-stretch w-full flex-[0_0_auto] border-t [border-top-style:solid] border-[#d9d9d9]">
           <h1 className="relative self-stretch mt-[-1.00px] font-display-large font-[number:var(--display-large-font-weight)] text-[#201a2f] text-[length:var(--display-medium-h1-font-size)] md:text-[length:var(--display-large-font-size)] tracking-[var(--display-large-letter-spacing)] leading-[var(--display-large-line-height)] [font-style:var(--display-large-font-style)]">

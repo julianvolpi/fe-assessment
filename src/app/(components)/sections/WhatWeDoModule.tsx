@@ -13,7 +13,7 @@ const WhatWeDo = ({
     <div className="flex flex-col items-center gap-[var(--spacing-padding-flex-xlarge)] pr-[var(--spacing-margins)] pl-[var(--spacing-margins)] pt-[100px] pb-[100px] relative w-full">
       <section
         id={id}
-        className="flex flex-col max-w-[1512px] items-start gap-[var(--spacing-padding-flex-large)] mx-auto w-full"
+        className="flex flex-col max-w-page min-w-page items-start gap-[var(--spacing-padding-flex-large)] mx-auto w-full"
       >
         <header className="flex flex-col items-start gap-[var(--spacing-padding-small)] pt-[var(--spacing-padding-medium)] pb-[var(--spacing-padding-medium)] px-0 self-stretch w-full border-t border-solid border-[#d9d9d9]">
           <h1 className="self-stretch mt-[-1.00px] font-display-large font-[number:var(--display-large-font-weight)] text-[#201a2f] text-[length:var(--display-large-font-size)] tracking-[var(--display-large-letter-spacing)] leading-[var(--display-large-line-height)] [font-style:var(--display-large-font-style)]">
