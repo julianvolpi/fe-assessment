@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+**Fe Assessment — Frontend**
 
-## Getting Started
+Landing page built with Next.js App Router, Tailwind CSS v4, TypeScript, shadcn/ui primitives and a small content layer typed with Zod. The page is rendered from block data and composed of reusable sections.
 
-First, run the development server:
+**Setup**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Prereqs: Node.js 20+ (LTS recommended)
+- Install: `npm i`
+- Dev: `npm run dev` then visit `http://localhost:3000`
+- Build: `npm run build` | Start: `npm start`
+- Lint: `npm run lint`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Architecture Overview**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Rendering
+  - Entry: `src/app/page.tsx` → `PageRenderer` loads the page by `slug`.
+  - Data fetch: `src/lib/hooks/usePage.ts` uses TanStack Query to call `src/lib/fetcher.ts`.
+  - API: `src/app/api/content/page/[slug]/route.ts` responds with the typed `PageDocument` (home page uses `slug = "home"`).
+- Content layer
+  - Schema: `src/lib/content/schema.ts` (Zod) defines a discriminated union of blocks.
+  - Types: `src/types/blocks.ts` exports block and page types.
+  - Data: `src/lib/content/data/home.ts` provides the home page blocks.
+- Components
+  - Section modules in `src/app/(components)/sections/*` implement each block (Hero, Manifesto, ClientScroller, CaseStudies, WhatWeDo, CTA, Footer).
+  - UI primitives (Button, Card, ScrollArea, etc.) live in `src/components/ui/*`.
+- Styling
+  - Tailwind v4 with CSS variables in `src/app/globals.css` and theme extensions in `tailwind.config.ts`.
+  - Global page width tokens: `max-w-page` and `min-w-page` for consistent layout bounds.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Component Decisions & Reusability**
 
-## Learn More
+- Blocks are isolated presentational components receiving typed props from the content layer; they can be re-ordered or reused on other pages.
+- Common tokens (spacing, colors, fonts) are centralized as CSS variables and Tailwind theme extensions for consistency.
+- Hero video uses a lightweight fullscreen overlay component to avoid cross‑origin iframe constraints and to allow a different fullscreen URL than the inline preview.
 
-To learn more about Next.js, take a look at the following resources:
+**Data Shape & Mapping**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Page structure: `PageDocument { slug, title, seo?, blocks: Block[] }`
+- Blocks are discriminated by `type` and validated via Zod.
+  - `hero`: id, type: 'hero', logoSrc, navItems[], cta, heading, subheading, mediaSrc, fullscreenMediaSrc? , cards[]
+  - `manifesto`: paragraphs[]
+  - `client-scroller`: heading, subheading, storiesButtonText, clientLogos[]
+  - `case-studies`: heading, subheading, caseVideos[], buttonLeftText, buttonRightText
+  - `what-we-do`: heading, approachItems[], buttonText
+  - `cta`: heading, description, buttonText
+  - `footer`: logoSrc, navItems[], connectItems[], contactItems[], subheading
+- Mapping: `PageRenderer` switches on `block.type` and renders the corresponding section component with the exact props.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Tailwind Tokens / Theme Choices**
 
-## Deploy on Vercel
+- Width tokens (custom):
+  - `maxWidth.page = 1512px`, `minWidth.page = 320px` → use as `max-w-page min-w-page` with `w-full mx-auto`.
+- Colors (CSS variables):
+  - Core: `--text-staticoncolour` (on-dark text), brand/neutral tokens in `globals.css`.
+  - Shadcn palette: `--background`, `--foreground`, `--primary`, `--secondary`, `--accent`, `--muted`, `--popover`, `--card`, `--border`, `--input`, `--ring`, `--destructive`.
+  - Tailwind theme maps a subset of CSS vars to utilities (see `tailwind.config.ts`).
+- Typography:
+  - Families declared for body/heading/display sizes as CSS vars; Tailwind `fontFamily` extends to shortcut common styles (e.g., `font-body-regular`, `font-display-large`).
+- Radius and screens:
+  - `borderRadius.lg/md/sm` derived from `--radius`.
+  - Screens aligned to design: `sm=320`, `md=768`, `lg=1280`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Known Gaps / Outstanding Items**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- To improve:
+  - Potential better use of tokens in many sections that couldn't be implemented because of time
+  - Lack of tests
+  - Implementation of lazy loading for certain components / performance in general
+  - Better SEO handling
+- Vimeo preview UI: hide with `background=1&muted=1&autoplay=1&loop=1&playsinline=1&badge=0` on the inline preview; provide a separate fullscreen URL with controls.
+- Smooth anchor scrolling: `html` has `scroll-smooth`; ensure header offsets if needed.
+- Content API route: confirm `src/app/api/content/page/[slug]/route.ts` returns `home.ts` data in production builds.
+
+**How to Add a New Section**
+
+- Define its Zod schema in `src/lib/content/schema.ts` and add to the `PageSchema` union.
+- Export a TypeScript type from `src/types/blocks.ts`.
+- Create a presentational component in `src/app/(components)/sections/YourSection.tsx`.
+- Map it in `PageRenderer`’s switch on `block.type`.
+- Provide data for it under `src/lib/content/data/*.ts` and ensure the API route includes it.
+
+**Fullscreen Video (Hero)**
+
+- Inline preview uses the small iframe (muted/autoplay/loops, UI hidden via Vimeo params).
+- Clicking the overlay opens a fullscreen container rendering a separate iframe URL (`fullscreenMediaSrc`), allowing controls/autoplay independent of the preview.
+
+**Conventions**
+
+- Keep layout bounds consistent with `w-full max-w-page min-w-page mx-auto`.
+- Prefer Tailwind tokens over raw values; if a value repeats, promote to a CSS var or theme key.

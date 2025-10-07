@@ -17,15 +17,9 @@ const config: Config = {
       colors: {
         "base-brand-colour-secondary-100":
           "var(--base-brand-colour-secondary-100)",
-        "collection-1-white": "var(--collection-1-white)",
-        "colour-state-ondark-default": "var(--colour-state-ondark-default)",
-        "colour-state-onlight-default": "var(--colour-state-onlight-default)",
         "interactionsondarktext-link-default":
           "var(--interactionsondarktext-link-default)",
         "text-staticoncolour": "var(--text-staticoncolour)",
-        "base-neutral-colour-light-grey":
-          "var(--base-neutral-colour-light-grey)",
-        "base-neutral-colour-stone-2": "var(--base-neutral-colour-stone-2)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
