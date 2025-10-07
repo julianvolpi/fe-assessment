@@ -6,15 +6,66 @@ import React, { JSX } from "react";
 import Image from "next/image";
 import alplus from "../../../../public/ALplus.svg";
 
+function FullscreenIframe({
+  src,
+  onClose,
+}: {
+  src: string;
+  onClose: () => void;
+}) {
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const open = async () => {
+      try {
+        await el.requestFullscreen();
+      } catch (e) {
+        // ignore
+      }
+    };
+    open();
+
+    const onChange = () => {
+      if (!document.fullscreenElement) onClose();
+    };
+    document.addEventListener("fullscreenchange", onChange);
+    return () => document.removeEventListener("fullscreenchange", onChange);
+  }, [onClose]);
+
+  return (
+    <div ref={ref} className="fixed inset-0 z-50 bg-black">
+      <iframe
+        src={src}
+        className="w-full h-full"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        title="hero-video-fullscreen"
+      />
+      <button
+        onClick={() => document.exitFullscreen?.()}
+        className="absolute top-3 right-3 text-white text-2xl"
+        aria-label="Close fullscreen"
+      >
+        ×
+      </button>
+    </div>
+  );
+}
+
 export default function HeroModule({
   heading,
   subheading,
   logoSrc,
   mediaSrc,
+  fullscreenMediaSrc,
   cta,
   navItems,
   cards,
 }: HeroBlock): JSX.Element {
+  const [open, setOpen] = React.useState(false);
+  const fullscreenSrc = fullscreenMediaSrc ?? mediaSrc;
   return (
     <div className="bg-[#2a223f]">
       <div className="flex flex-col items-center gap-[var(--spacing-padding-medium)] pb-[var(--spacing-padding-flex-xlarge)] pt-0 px-0 bg-[#2a223f] max-w-page min-w-page w-full mx-auto">
@@ -98,8 +149,14 @@ export default function HeroModule({
                   height="470"
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
-                  title="Intro-short-Sm-v1.1"
-                ></iframe>
+                  title="hero-video"
+                />
+                <button
+                  type="button"
+                  aria-label="Open video fullscreen"
+                  onClick={() => setOpen(true)}
+                  className="absolute inset-0 cursor-pointer"
+                />
               </div>
             </div>
           </section>
@@ -135,6 +192,16 @@ export default function HeroModule({
             })}
           </section>
         </main>
+        {open && (
+          <FullscreenIframe
+            src={
+              fullscreenSrc.includes("?")
+                ? `${fullscreenSrc}&autoplay=1`
+                : `${fullscreenSrc}?autoplay=1`
+            }
+            onClose={() => setOpen(false)}
+          />
+        )}
       </div>
     </div>
   );

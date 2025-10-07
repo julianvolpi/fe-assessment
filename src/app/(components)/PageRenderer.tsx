@@ -12,8 +12,6 @@ import CtaModule from "./sections/CTAModule";
 import FooterModule from "./sections/FooterModule";
 
 // TODO: mobile menu for header
-// TODO: fullscreen video reproduction
-// TODO: hide vimeo video controls for preview -> not sure if possible with free account
 
 // TODO: cleanup unused css variables
 

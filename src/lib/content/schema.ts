@@ -51,6 +51,7 @@ export const HeroBlockSchema = BaseBlockSchema.extend({
   heading: z.string().min(1),
   subheading: z.string().min(1),
   mediaSrc: z.string().min(1),
+  fullscreenMediaSrc: z.string().min(1),
   className: z.string().optional(),
   cards: z.array(CardSchema),
 });
