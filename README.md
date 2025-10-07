@@ -4,6 +4,8 @@ Landing page built with Next.js App Router, Tailwind CSS v4, TypeScript, shadcn/
 
 Figma Link -> https://www.figma.com/design/odSg7NuB3UqrYR4YtFiQnb/FE-Assessment?node-id=0-1
 
+An already running version can be accessed here -> https://fe-assessment-lovat.vercel.app/
+
 **Setup**
 
 - Prereqs: Node.js 20+ (LTS recommended)
