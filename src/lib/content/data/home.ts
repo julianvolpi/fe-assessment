@@ -202,7 +202,7 @@ export const homePage: PageDocument = {
         "Toronto:\n+1 647 6960645",
         "NYC:\n+1 646 6063886",
       ],
-      logoSrc: "/BrandLogo.png",
+      logoSrc: "/BrandLogo.svg",
       subheading: "Specialists in law for growing businesses",
     },
   ],
